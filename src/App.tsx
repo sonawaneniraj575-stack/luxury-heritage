@@ -521,10 +521,12 @@ export default function Home() {
         </div>
 
         <div className="text-center mt-12">
+           <Link to="/shop">
           <Button size="lg" variant="outline" className="btn-luxury-secondary px-8">
             View All Products
             <ArrowRight size={18} className="ml-2" />
           </Button>
+        </Link>
         </div>
       </div>
     </section>

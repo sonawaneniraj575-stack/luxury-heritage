@@ -65,7 +65,7 @@ Create a `.env` file in your project root with these variables:
 # ===== SUPABASE CONFIGURATION =====
 VITE_SUPABASE_URL=https://your-project-ref.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-key-here
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key-here
+
 
 # ===== PAYMENT PROCESSING =====
 # Stripe (International Payments)

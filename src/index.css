@@ -1072,3 +1072,12 @@ textarea:focus-visible {
     @apply bg-background text-foreground;
   }
 }
+
+
+.lucide-chevron-right {
+  display: none; 
+}
+
+.lucide-chevron-left {
+  display: none; 
+}
