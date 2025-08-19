@@ -1,0 +1,1074 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-heading: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-body: "Lora", ui-serif, Georgia, serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.5rem;
+  
+  /* Luxury Light Theme (Cream & Gold) */
+  --background: oklch(0.98 0.005 85);
+  --foreground: oklch(0.15 0.01 85);
+  --card: oklch(0.99 0.003 85);
+  --card-foreground: oklch(0.15 0.01 85);
+  --popover: oklch(0.99 0.003 85);
+  --popover-foreground: oklch(0.15 0.01 85);
+  --primary: oklch(0.55 0.12 85);
+  --primary-foreground: oklch(0.98 0.005 85);
+  --secondary: oklch(0.93 0.01 85);
+  --secondary-foreground: oklch(0.25 0.02 85);
+  --muted: oklch(0.93 0.01 85);
+  --muted-foreground: oklch(0.45 0.02 85);
+  --accent: oklch(0.55 0.12 85);
+  --accent-foreground: oklch(0.98 0.005 85);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.88 0.005 85);
+  --input: oklch(0.88 0.005 85);
+  --ring: oklch(0.55 0.12 85);
+  
+  /* Luxury Color Variables */
+  --gold: oklch(0.75 0.15 85);
+  --gold-light: oklch(0.85 0.1 85);
+  --gold-dark: oklch(0.45 0.12 85);
+  --navy: oklch(0.2 0.05 240);
+  --navy-light: oklch(0.3 0.05 240);
+  --navy-dark: oklch(0.12 0.05 240);
+  --cream: oklch(0.98 0.005 85);
+  --cream-dark: oklch(0.93 0.01 85);
+  --charcoal: oklch(0.25 0.01 240);
+  
+  /* Chart colors with luxury palette */
+  --chart-1: oklch(0.75 0.15 85);
+  --chart-2: oklch(0.2 0.05 240);
+  --chart-3: oklch(0.45 0.12 85);
+  --chart-4: oklch(0.3 0.05 240);
+  --chart-5: oklch(0.85 0.1 85);
+  
+  /* Sidebar colors */
+  --sidebar: oklch(0.99 0.003 85);
+  --sidebar-foreground: oklch(0.15 0.01 85);
+  --sidebar-primary: oklch(0.75 0.15 85);
+  --sidebar-primary-foreground: oklch(0.15 0.01 85);
+  --sidebar-accent: oklch(0.93 0.01 85);
+  --sidebar-accent-foreground: oklch(0.25 0.02 85);
+  --sidebar-border: oklch(0.88 0.005 85);
+  --sidebar-ring: oklch(0.55 0.12 85);
+}
+
+.dark {
+  /* Luxury Dark Theme (Navy & Gold) */
+  --background: oklch(0.12 0.05 240);
+  --foreground: oklch(0.98 0.005 85);
+  --card: oklch(0.18 0.04 240);
+  --card-foreground: oklch(0.98 0.005 85);
+  --popover: oklch(0.18 0.04 240);
+  --popover-foreground: oklch(0.98 0.005 85);
+  --primary: oklch(0.75 0.15 85);
+  --primary-foreground: oklch(0.12 0.05 240);
+  --secondary: oklch(0.25 0.03 240);
+  --secondary-foreground: oklch(0.98 0.005 85);
+  --muted: oklch(0.25 0.03 240);
+  --muted-foreground: oklch(0.65 0.02 85);
+  --accent: oklch(0.75 0.15 85);
+  --accent-foreground: oklch(0.12 0.05 240);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(0.3 0.03 240);
+  --input: oklch(0.25 0.03 240);
+  --ring: oklch(0.75 0.15 85);
+  
+  /* Dark theme luxury variables */
+  --gold: oklch(0.85 0.15 85);
+  --gold-light: oklch(0.92 0.12 85);
+  --gold-dark: oklch(0.65 0.18 85);
+  --navy: oklch(0.12 0.05 240);
+  --navy-light: oklch(0.18 0.04 240);
+  --navy-dark: oklch(0.08 0.06 240);
+  --cream: oklch(0.98 0.005 85);
+  --cream-dark: oklch(0.88 0.01 85);
+  --charcoal: oklch(0.15 0.02 240);
+  
+  /* Dark theme charts */
+  --chart-1: oklch(0.85 0.15 85);
+  --chart-2: oklch(0.3 0.05 240);
+  --chart-3: oklch(0.65 0.18 85);
+  --chart-4: oklch(0.45 0.08 240);
+  --chart-5: oklch(0.92 0.12 85);
+  
+  /* Dark sidebar */
+  --sidebar: oklch(0.18 0.04 240);
+  --sidebar-foreground: oklch(0.98 0.005 85);
+  --sidebar-primary: oklch(0.85 0.15 85);
+  --sidebar-primary-foreground: oklch(0.12 0.05 240);
+  --sidebar-accent: oklch(0.25 0.03 240);
+  --sidebar-accent-foreground: oklch(0.98 0.005 85);
+  --sidebar-border: oklch(0.3 0.03 240);
+  --sidebar-ring: oklch(0.75 0.15 85);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "liga", "kern";
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+    font-feature-settings: "liga", "kern", "swsh";
+  }
+  
+  .font-luxury-heading {
+    font-family: var(--font-heading);
+  }
+  
+  .font-luxury-body {
+    font-family: var(--font-body);
+  }
+}
+
+/* Luxury Animation Keyframes */
+@keyframes luxuryFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes luxuryFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes luxuryScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes luxuryShimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+/* Luxury Utility Classes */
+.luxury-fade-up {
+  animation: luxuryFadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.luxury-fade-in {
+  animation: luxuryFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.luxury-scale-up {
+  animation: luxuryScaleUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.luxury-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 215, 0, 0.1),
+    transparent
+  );
+  background-size: 200px 100%;
+  animation: luxuryShimmer 2s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: var(--radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dark);
+}
+
+/* Selection Colors */
+::selection {
+  background-color: oklch(0.75 0.15 85 / 0.3);
+  color: var(--foreground);
+}
+
+/* Focus Styles */
+.focus-luxury:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Luxury Gradient Backgrounds */
+.luxury-gradient-gold {
+  background: linear-gradient(
+    135deg,
+    var(--gold-light) 0%,
+    var(--gold) 50%,
+    var(--gold-dark) 100%
+  );
+}
+
+.luxury-gradient-navy {
+  background: linear-gradient(
+    135deg,
+    var(--navy-light) 0%,
+    var(--navy) 50%,
+    var(--navy-dark) 100%
+  );
+}
+
+/* Luxury Glass Effect */
+.luxury-glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Luxury Text Effects */
+.text-luxury-gold {
+  background: linear-gradient(
+    135deg,
+    var(--gold-light),
+    var(--gold),
+    var(--gold-dark)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hover Transitions */
+.luxury-hover-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced Link Hover Effects */
+a:hover {
+  transition: all 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+.luxury-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Variants */
+.btn-luxury-primary {
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.btn-luxury-primary:hover {
+  background: var(--gold-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn-luxury-secondary {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.btn-luxury-secondary:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* Card Styles */
+.luxury-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.luxury-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  border-color: var(--gold);
+}
+
+/* Typography Enhancements */
+.luxury-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.luxury-subtitle {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--muted-foreground);
+  letter-spacing: 0.25px;
+}
+
+.luxury-body {
+  font-family: var(--font-body);
+  line-height: 1.7;
+  color: var(--foreground);
+}
+
+.luxury-caption {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ==== COMPREHENSIVE BUTTON & HOVER IMPROVEMENTS ====
+
+/* Universal Button Base Styles */
+button, .btn, [role="button"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.025em !important;
+}
+
+/* Primary Button Style (Gold) */
+.btn-luxury-primary, 
+button[class*="bg-gold"],
+button[class*="btn-luxury-primary"],
+.Button[class*="bg-gold"] {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%) !important;
+  color: var(--navy) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  font-size: 0.875rem !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.2) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.btn-luxury-primary:hover, 
+button[class*="bg-gold"]:hover,
+button[class*="btn-luxury-primary"]:hover,
+.Button[class*="bg-gold"]:hover {
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%) !important;
+  color: var(--navy) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4) !important;
+  scale: 1.02 !important;
+}
+
+.btn-luxury-primary:active,
+button[class*="bg-gold"]:active,
+button[class*="btn-luxury-primary"]:active {
+  transform: translateY(-1px) !important;
+  scale: 0.98 !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
+}
+
+/* Secondary Button Style (Outline) */
+.btn-luxury-secondary,
+button[variant="outline"],
+.Button[variant="outline"],
+button[class*="btn-luxury-secondary"] {
+  background: transparent !important;
+  color: var(--gold) !important;
+  border: 2px solid var(--gold) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  font-size: 0.875rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.btn-luxury-secondary:hover,
+button[variant="outline"]:hover,
+.Button[variant="outline"]:hover,
+button[class*="btn-luxury-secondary"]:hover {
+  background: var(--gold) !important;
+  color: var(--navy) !important;
+  border-color: var(--gold) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3) !important;
+  scale: 1.02 !important;
+}
+
+/* Ghost Button Style */
+.btn-luxury-ghost,
+button[variant="ghost"],
+.Button[variant="ghost"],
+button[class*="btn-luxury-ghost"] {
+  background: transparent !important;
+  color: var(--foreground) !important;
+  border: 1px solid transparent !important;
+  font-weight: 500 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+}
+
+.btn-luxury-ghost:hover,
+button[variant="ghost"]:hover,
+.Button[variant="ghost"]:hover,
+button[class*="btn-luxury-ghost"]:hover {
+  background: rgba(212, 175, 55, 0.1) !important;
+  color: var(--gold) !important;
+  border-color: var(--gold) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15) !important;
+}
+
+/* Destructive Button Style */
+.btn-destructive,
+button[variant="destructive"],
+.Button[variant="destructive"] {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-destructive:hover,
+button[variant="destructive"]:hover,
+.Button[variant="destructive"]:hover {
+  background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4) !important;
+}
+
+/* Icon Button Styles */
+.btn-icon,
+button[class*="p-2"],
+button[class*="rounded-full"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+}
+
+.btn-icon:hover,
+button[class*="p-2"]:hover,
+button[class*="rounded-full"]:hover {
+  background: rgba(212, 175, 55, 0.1) !important;
+  transform: translateY(-1px) scale(1.05) !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2) !important;
+}
+
+/* Special Button Types */
+.view-details-btn {
+  background: transparent !important;
+  color: var(--gold) !important;
+  border: 2px solid var(--gold) !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.view-details-btn:hover {
+  background: var(--gold) !important;
+  color: var(--navy) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4) !important;
+  scale: 1.02 !important;
+}
+
+.view-details-btn:active {
+  transform: translateY(-1px) !important;
+  scale: 0.98 !important;
+}
+
+/* Add to Cart Button Enhancements */
+button:has([data-testid="shopping-cart"]),
+button:has(.ShoppingCart),
+button[class*="add-to-cart"],
+.add-to-cart-btn {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%) !important;
+  color: var(--navy) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  font-size: 0.875rem !important;
+  border: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+button:has([data-testid="shopping-cart"]):hover,
+button:has(.ShoppingCart):hover,
+button[class*="add-to-cart"]:hover,
+.add-to-cart-btn:hover {
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4) !important;
+  scale: 1.02 !important;
+}
+
+/* Pagination Button Improvements */
+.pagination-btn,
+button[class*="pagination"],
+button:has([data-testid="chevron"]) {
+  border: 2px solid var(--border) !important;
+  color: var(--foreground) !important;
+  font-weight: 500 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.pagination-btn:hover,
+button[class*="pagination"]:hover,
+button:has([data-testid="chevron"]):hover {
+  border-color: var(--gold) !important;
+  color: var(--gold) !important;
+  background: rgba(212, 175, 55, 0.05) !important;
+  transform: translateY(-1px) !important;
+}
+
+.pagination-btn:disabled,
+button[class*="pagination"]:disabled,
+button:has([data-testid="chevron"]):disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Filter & Sort Button Improvements */
+.filter-btn,
+button[class*="filter"],
+button:has([data-testid="filter"]),
+button:has([data-testid="sliders"]) {
+  background: rgba(212, 175, 55, 0.1) !important;
+  color: var(--gold) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  font-weight: 500 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.filter-btn:hover,
+button[class*="filter"]:hover,
+button:has([data-testid="filter"]):hover,
+button:has([data-testid="sliders"]):hover {
+  background: rgba(212, 175, 55, 0.2) !important;
+  border-color: var(--gold) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2) !important;
+}
+
+/* Social Media Button Improvements */
+.social-btn,
+button:has([data-testid="instagram"]),
+button:has([data-testid="facebook"]),
+button:has([data-testid="twitter"]),
+[class*="social"] button {
+  color: rgba(255, 255, 255, 0.6) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border-radius: 50% !important;
+  padding: 8px !important;
+}
+
+.social-btn:hover,
+button:has([data-testid="instagram"]):hover,
+button:has([data-testid="facebook"]):hover,
+button:has([data-testid="twitter"]):hover,
+[class*="social"] button:hover {
+  color: var(--gold) !important;
+  background: rgba(212, 175, 55, 0.1) !important;
+  transform: translateY(-2px) scale(1.1) !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
+}
+
+/* ==== COLOR VISIBILITY FIXES ==== */
+
+/* Top bar contrast improvements */
+.top-bar-contrast {
+  background: rgba(10, 22, 40, 0.95) !important;
+}
+
+.top-bar-contrast * {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500 !important;
+}
+
+.top-bar-contrast .text-gold {
+  color: #d4af37 !important;
+}
+
+.top-bar-contrast button:hover {
+  color: #d4af37 !important;
+}
+
+/* Improved dropdown styling */
+.dropdown-improved {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border: 2px solid rgba(212, 175, 55, 0.3) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.dropdown-improved button {
+  color: var(--foreground) !important;
+  font-weight: 600 !important;
+}
+
+.dropdown-improved button:hover {
+  background: rgba(212, 175, 55, 0.1) !important;
+  color: #d4af37 !important;
+}
+
+/* Enhanced button styling with important declarations */
+.btn-luxury-primary {
+  background: var(--gold) !important;
+  color: var(--navy) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  font-size: 0.875rem !important;
+  border: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-luxury-primary:hover {
+  background: var(--gold-dark) !important;
+  color: var(--navy) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3) !important;
+}
+
+.btn-luxury-ghost {
+  background: transparent !important;
+  color: var(--foreground) !important;
+  border: 1px solid var(--border) !important;
+  font-weight: 500 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-luxury-ghost:hover {
+  background: var(--muted) !important;
+  color: var(--gold) !important;
+  border-color: var(--gold) !important;
+}
+
+/* Enhanced Navigation Animation Keyframes */
+@keyframes navLinkPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(212, 175, 55, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+.nav-link-enhanced:focus-visible {
+  animation: navLinkPulse 1.5s infinite;
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Enhanced Footer Background and Visibility */
+footer {
+  background: linear-gradient(135deg, #0a1628 0%, #051018 50%, #030810 100%) !important;
+  border-top: 3px solid var(--gold) !important;
+  position: relative !important;
+}
+
+footer::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: radial-gradient(ellipse at center top, rgba(212, 175, 55, 0.08) 0%, transparent 70%) !important;
+  pointer-events: none !important;
+}
+
+footer > div {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+footer h3, 
+footer h4, 
+footer h5 {
+  color: #d4af37 !important;
+  font-weight: 600 !important;
+}
+
+footer p, 
+footer span, 
+footer li {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500 !important;
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+
+footer a:hover {
+  color: #d4af37 !important;
+  text-decoration: none !important;
+}
+
+/* Navigation active states */
+.nav-active {
+  color: var(--gold) !important;
+  font-weight: 600 !important;
+  position: relative;
+}
+
+.nav-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 1px;
+}
+
+/* Simple Navigation Link Hover Effects */
+.nav-link {
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--gold) !important;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+/* Active navigation link styling */
+.nav-link.active {
+  color: var(--gold) !important;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 6px;
+}
+
+/* Mobile active navigation link styling */
+.nav-link.mobile-active {
+  color: var(--gold) !important;
+  border-left: 2px solid var(--gold);
+  padding-left: 10px;
+  background: rgba(212, 175, 55, 0.1);
+}
+
+/* Home page specific nav link colors */
+.home-nav-white {
+  color: white !important;
+}
+
+.home-nav-white:hover {
+  color: var(--gold) !important;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+.home-nav-dark {
+  color: var(--foreground) !important;
+}
+
+.home-nav-dark:hover {
+  color: var(--gold) !important;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+/* Enhanced product card styling */
+.product-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: 1px solid var(--border) !important;
+  background: var(--card) !important;
+}
+
+.product-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12) !important;
+  border-color: var(--gold) !important;
+}
+
+.product-card .view-details-btn {
+  background: var(--gold) !important;
+  color: var(--navy) !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+}
+
+.product-card .view-details-btn:hover {
+  background: var(--gold-dark) !important;
+  color: var(--navy) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4) !important;
+}
+
+/* Wishlist heart button styling */
+.wishlist-btn {
+  transition: all 0.3s ease !important;
+  color: var(--muted-foreground) !important;
+}
+
+.wishlist-btn:hover {
+  color: #dc2626 !important;
+  transform: scale(1.1) !important;
+}
+
+.wishlist-btn.active {
+  color: #dc2626 !important;
+  fill: #dc2626 !important;
+}
+
+/* Enhanced form styling */
+input, textarea, select {
+  border: 1px solid var(--border) !important;
+  background: var(--background) !important;
+  color: var(--foreground) !important;
+  font-weight: 500 !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1) !important;
+  outline: none !important;
+}
+
+/* Badge styling improvements */
+.badge-limited {
+  background: linear-gradient(135deg, #dc2626, #ef4444) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+}
+
+.badge-bestseller {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark)) !important;
+  color: var(--navy) !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+}
+
+.badge-new {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+}
+
+/* Stock indicator styling */
+.stock-indicator {
+  color: #dc2626 !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  background: rgba(220, 38, 38, 0.1) !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba(220, 38, 38, 0.2) !important;
+}
+
+/* Price styling */
+.price-current {
+  color: var(--foreground) !important;
+  font-weight: 700 !important;
+  font-size: 1.125rem !important;
+}
+
+.price-original {
+  color: var(--muted-foreground) !important;
+  font-weight: 500 !important;
+  text-decoration: line-through !important;
+  font-size: 1rem !important;
+}
+
+.price-discount {
+  color: #dc2626 !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  background: rgba(220, 38, 38, 0.1) !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+}
+
+/* ==== RESPONSIVE IMPROVEMENTS ==== */
+
+@media (max-width: 768px) {
+  .top-bar-contrast {
+    padding: 8px 0 !important;
+  }
+  
+  .top-bar-contrast .container {
+    padding: 0 16px !important;
+  }
+  
+  .product-card {
+    margin-bottom: 24px !important;
+  }
+  
+  .btn-luxury-primary {
+    font-size: 0.8rem !important;
+    padding: 12px 20px !important;
+  }
+}
+
+/* ==== ACCESSIBILITY IMPROVEMENTS ==== */
+
+/* Focus indicators */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2) !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .top-bar-contrast {
+    background: #000000 !important;
+  }
+  
+  .top-bar-contrast * {
+    color: #ffffff !important;
+  }
+  
+  .btn-luxury-primary {
+    border: 2px solid var(--gold) !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Responsive Design Helpers */
+@media (max-width: 768px) {
+  .luxury-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  
+  .luxury-card {
+    padding: 1rem;
+  }
+  
+  .luxury-hover-lift:hover {
+    transform: none;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
